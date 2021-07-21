@@ -4,6 +4,7 @@ import React from "react";
 import Header from "../components/Header";
 import States from "../components/States";
 import ChartSec from "../components/ChartSec";
+import LinksSec from "../components/LinksSec";
 
 const Dashboard = () => {
 	return (
@@ -11,6 +12,7 @@ const Dashboard = () => {
 			<Header />
 			<States />
 			<ChartSec />
+			<LinksSec />
 		</>
 	);
 };

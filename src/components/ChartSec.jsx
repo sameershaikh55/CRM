@@ -81,11 +81,11 @@ const ChartSec = () => {
 				],
 				datasets: [
 					{
-						label: "",
+						label: "Dataset No 1",
 						fill: true,
 						backgroundColor: gradientStroke,
 						borderColor: "#424ede",
-						borderWidth: 2,
+						borderWidth: 2.5,
 						borderDash: [],
 						borderDashOffset: 0.0,
 						pointBackgroundColor: "#222870",
@@ -128,11 +128,11 @@ const ChartSec = () => {
 				],
 				datasets: [
 					{
-						label: "",
+						label: "Dataset No 2",
 						fill: true,
 						backgroundColor: gradientStroke,
 						borderColor: "#424ede",
-						borderWidth: 2,
+						borderWidth: 2.5,
 						borderDash: [],
 						borderDashOffset: 0.0,
 						pointBackgroundColor: "#222870",
@@ -175,11 +175,11 @@ const ChartSec = () => {
 				],
 				datasets: [
 					{
-						label: "",
+						label: "Dataset No 3",
 						fill: true,
 						backgroundColor: gradientStroke,
 						borderColor: "#424ede",
-						borderWidth: 2,
+						borderWidth: 2.5,
 						borderDash: [],
 						borderDashOffset: 0.0,
 						pointBackgroundColor: "#222870",
@@ -205,7 +205,7 @@ const ChartSec = () => {
 	};
 
 	return (
-		<div className="chart_container shadow-sm mt-5">
+		<div className="chart_container mt-5">
 			<div className="page_container">
 				<div className="container-fluid">
 					<div className="charts bg-white px-3">

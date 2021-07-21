@@ -1,7 +1,6 @@
 import React from "react";
 
 import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
-import graph from "../assets/graph.PNG";
 
 const States = () => {
 	const data = [

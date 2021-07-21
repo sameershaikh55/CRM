@@ -22,6 +22,14 @@ body {
 .borderBottom {
 	border-bottom: 3px solid #6e76e5;
 }
+
+.dark {
+	color: #12163e;
+}
+
+.mainColor {
+	color: #424ede;
+}
 // GLOBAL END
 
 // HEADER START
@@ -30,11 +38,50 @@ body {
 	width: 100%;
 	padding: 1rem 0rem;
 	border-bottom: 3px solid #6e76e5;
+	z-index: 1;
 
 	.logo_container {
 		img {
 			height: 40px;
 			width: auto;
+		}
+	}
+
+	.nav_link {
+		font-weight: 500;
+	}
+
+	.mainColor {
+		letter-spacing: 0.8px;
+	}
+
+	.avatar {
+		height: 26px;
+		width: 26px;
+		border-radius: 50%;
+		border: 2px solid #6e76e5;
+	}
+
+	.nested_nav {
+		position: absolute;
+		top: 150%;
+		left: -52%;
+		background-color: #fff;
+		box-shadow: 1px 1px 10px rgba(34, 40, 112, 0.2);
+		width: 200px;
+		border-radius: 8px;
+		padding-left: 1.2rem;
+		padding-right: 1.2rem;
+		padding-top: 0.8rem;
+
+		ul {
+			li {
+				display: flex;
+				align-items: center;
+				font-weight: 500;
+				margin-bottom: 8px;
+				color: #12163e;
+			}
 		}
 	}
 }
@@ -51,7 +98,6 @@ body {
 		height: 100%;
 
 		.title {
-			// color: #818ea3;
 			color: #12163e;
 		}
 
@@ -118,7 +164,7 @@ body {
 		box-shadow: 1px 1px 10px rgba(34, 40, 112, 0.2);
 		height: 400px;
 		position: relative;
-		padding: 3.5rem 0rem 0.8rem;
+		padding: 3.8rem 0rem 0.8rem;
 
 		.charts_btn {
 			position: absolute;
@@ -148,3 +194,28 @@ body {
 	}
 }
 // CHART END
+
+// LINKS START
+.links_container {
+	.links_btn_container {
+		.btn:nth-child(1) {
+			background-color: #424ede;
+			color: #fff;
+		}
+
+		.btn:nth-child(2) {
+			border-radius: 50%;
+			padding: 0.3rem 0.7rem 0.6rem 0.7rem !important;
+			border: 2px solid #424ede;
+			color: #424ede;
+		}
+
+		.btn:nth-child(3) {
+			border-radius: 50%;
+			padding: 0.35rem 0.78rem 0.5rem 0.78rem !important;
+			border: 2px solid #424ede;
+			color: #424ede;
+		}
+	}
+}
+// LINKS END
