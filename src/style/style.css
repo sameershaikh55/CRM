@@ -74,6 +74,22 @@ body {
   color: #424ede;
 }
 
+input:focus {
+  outline: none;
+}
+
+.outlinedBtn {
+  border: 2px solid #424ede !important;
+  min-width: 20px !important;
+  padding: 7px 8px !important;
+}
+
+.outlinedBtn2 {
+  border: 2px solid #424ede !important;
+  min-width: 20px !important;
+  padding: 5.5px 10px !important;
+}
+
 .header_container {
   position: fixed;
   width: 100%;
@@ -238,14 +254,14 @@ body {
 
 .links_container .links_btn_container .btn:nth-child(2) {
   border-radius: 50%;
-  padding: 0.3rem 0.7rem 0.6rem 0.7rem !important;
+  padding: 0.4rem 0.7rem 0.6rem 0.7rem !important;
   border: 2px solid #424ede;
   color: #424ede;
 }
 
 .links_container .links_btn_container .btn:nth-child(3) {
   border-radius: 50%;
-  padding: 0.35rem 0.78rem 0.5rem 0.78rem !important;
+  padding: 0.6rem 0.7rem 0.42rem 0.7rem !important;
   border: 2px solid #424ede;
   color: #424ede;
 }
@@ -330,6 +346,41 @@ body {
   border-radius: 50%;
 }
 
+.filteration {
+  background-color: #fff;
+  top: 100%;
+  right: 0%;
+  width: 280px;
+  height: 400px;
+  overflow: auto;
+  -webkit-box-shadow: 1px 1px 10px rgba(34, 40, 112, 0.2);
+          box-shadow: 1px 1px 10px rgba(34, 40, 112, 0.2);
+  border-radius: 8px;
+  z-index: 99;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+.filteration::-webkit-scrollbar {
+  width: 6px;
+}
+
+.filteration::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px #424fde98;
+          box-shadow: inset 0 0 5px #424fde98;
+}
+
+.filteration::-webkit-scrollbar-thumb {
+  background: #424ede;
+  border-radius: 4px;
+}
+
+.filteration::-webkit-scrollbar-thumb:hover {
+  background: #424ede;
+}
+
 .footer {
   background-color: #fff;
   margin-top: 6rem;
@@ -342,6 +393,12 @@ body {
 .footer .logo {
   width: 150px;
   height: auto;
+}
+
+@media screen and (min-width: 1000px) {
+  .MuiDialog-paperWidthSm {
+    width: 500px;
+  }
 }
 
 @media screen and (max-width: 768px) {
