@@ -3,7 +3,9 @@
 	margin: 0%;
 	box-sizing: border-box;
 }
-
+body {
+	height: 200vh;
+}
 // GLOBAL START
 .page_container {
 	max-width: 1150px;
@@ -216,6 +218,82 @@ body {
 			border: 2px solid #424ede;
 			color: #424ede;
 		}
+	}
+	.hastageIcon {
+		background-color: #424ede;
+		padding: 0.22rem 0.5rem 0.45rem 0.52rem;
+	}
+	.linkRow {
+		background-color: #fff;
+		box-shadow: 1px 1px 10px rgba(34, 40, 112, 0.2);
+		border-radius: 10px;
+		border: 1px solid #424ede;
+	}
+	.graphNumber {
+		background: #424ede;
+		border-radius: 5px;
+		padding: 0rem 0.2rem 0rem 0.4rem;
+		color: #fff;
+	}
+
+	// CHECKBOX
+	.switch {
+		position: relative;
+		display: inline-block;
+		width: 36px;
+		height: 20.4px;
+		margin-top: 6px;
+	}
+
+	.switch input {
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+
+	.slider {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #ccc;
+		-webkit-transition: 0.4s;
+		transition: 0.4s;
+	}
+
+	.slider:before {
+		position: absolute;
+		content: "";
+		height: 15px;
+		width: 15px;
+		left: 3px;
+		bottom: 3px;
+		background-color: white;
+		-webkit-transition: 0.4s;
+		transition: 0.4s;
+	}
+
+	input:checked + .slider {
+		background-color: #424ede;
+	}
+
+	input:focus + .slider {
+		box-shadow: 0 0 1px #424ede;
+	}
+
+	input:checked + .slider:before {
+		transform: translateX(15px);
+	}
+
+	/* Rounded sliders */
+	.slider.round {
+		border-radius: 34px;
+	}
+
+	.slider.round:before {
+		border-radius: 50%;
 	}
 }
 // LINKS END

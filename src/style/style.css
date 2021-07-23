@@ -5,6 +5,10 @@
           box-sizing: border-box;
 }
 
+body {
+  height: 200vh;
+}
+
 .page_container {
   max-width: 1150px;
   margin-left: auto;
@@ -184,6 +188,10 @@ body {
   color: #fff;
 }
 
+.links_container {
+  /* Rounded sliders */
+}
+
 .links_container .links_btn_container .btn:nth-child(1) {
   background-color: #424ede;
   color: #fff;
@@ -201,5 +209,85 @@ body {
   padding: 0.35rem 0.78rem 0.5rem 0.78rem !important;
   border: 2px solid #424ede;
   color: #424ede;
+}
+
+.links_container .hastageIcon {
+  background-color: #424ede;
+  padding: 0.22rem 0.5rem 0.45rem 0.52rem;
+}
+
+.links_container .linkRow {
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 10px rgba(34, 40, 112, 0.2);
+          box-shadow: 1px 1px 10px rgba(34, 40, 112, 0.2);
+  border-radius: 10px;
+  border: 1px solid #424ede;
+}
+
+.links_container .graphNumber {
+  background: #424ede;
+  border-radius: 5px;
+  padding: 0rem 0.2rem 0rem 0.4rem;
+  color: #fff;
+}
+
+.links_container .switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20.4px;
+  margin-top: 6px;
+}
+
+.links_container .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.links_container .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.links_container .slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.links_container input:checked + .slider {
+  background-color: #424ede;
+}
+
+.links_container input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #424ede;
+          box-shadow: 0 0 1px #424ede;
+}
+
+.links_container input:checked + .slider:before {
+  -webkit-transform: translateX(15px);
+          transform: translateX(15px);
+}
+
+.links_container .slider.round {
+  border-radius: 34px;
+}
+
+.links_container .slider.round:before {
+  border-radius: 50%;
 }
 /*# sourceMappingURL=style.css.map */
