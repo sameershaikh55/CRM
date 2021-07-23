@@ -245,6 +245,16 @@ input:focus {
 
 .links_container {
   /* Rounded sliders */
+  /* Rounded sliders */
+}
+
+.links_container .links_btn_container .inner_btn {
+  border: 2px solid #424ede;
+  border-radius: 4px;
+}
+
+.links_container .links_btn_container .inner_btn .MuiButton-root {
+  min-width: 0px;
 }
 
 .links_container .links_btn_container .btn:nth-child(1) {
@@ -273,14 +283,25 @@ input:focus {
 
 .links_container .linkRow {
   background-color: #fff;
-  -webkit-box-shadow: 1px 1px 10px rgba(34, 40, 112, 0.2);
-          box-shadow: 1px 1px 10px rgba(34, 40, 112, 0.2);
-  border-radius: 10px;
-  border: 1px solid #424ede;
+}
+
+.links_container .col-12 .linkRow {
+  -webkit-box-shadow: 1px 1px 8px rgba(34, 40, 112, 0.2);
+          box-shadow: 1px 1px 8px rgba(34, 40, 112, 0.2);
+}
+
+.links_container .col-12:first-child .linkRow {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.links_container .col-12:last-child .linkRow {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .links_container .graphNumber {
-  background: #424ede;
+  background: #636363;
   border-radius: 5px;
   padding: 0rem 0.2rem 0rem 0.4rem;
   color: #fff;
@@ -339,11 +360,15 @@ input:focus {
 }
 
 .links_container .slider.round {
-  border-radius: 34px;
+  border-radius: 2px;
 }
 
 .links_container .slider.round:before {
-  border-radius: 50%;
+  border-radius: 2px;
+}
+
+.links_container .tableStart {
+  background-color: #fff;
 }
 
 .filteration {

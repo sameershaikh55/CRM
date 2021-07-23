@@ -3,7 +3,7 @@ import Button from "@material-ui/core/Button";
 
 import { FiDownload } from "react-icons/fi";
 import { FaFilter, FaHashtag, FaChartBar, FaEdit } from "react-icons/fa";
-import { IoIosAddCircle, IoIosArrowDroprightCircle } from "react-icons/io";
+import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { BiCalendar } from "react-icons/bi";
 import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
@@ -14,22 +14,24 @@ import { ImCross } from "react-icons/im";
 import { GoPrimitiveDot } from "react-icons/go";
 import BioLink from "./BioLink";
 import ShortUrl from "./ShortUrl";
+import Tooltip from "@material-ui/core/Tooltip";
+import Zoom from "@material-ui/core/Zoom";
 
 const options = [
 	{
-		i: <FaEdit />,
+		i: <FaEdit color="#12163e" fontSize="1.2rem" />,
 		t: "Edit",
 	},
 	{
-		i: <AiOutlineBarChart />,
+		i: <AiOutlineBarChart color="#12163e" fontSize="1.3rem" />,
 		t: "Statistics",
 	},
 	{
-		i: <AiOutlineQrcode />,
+		i: <AiOutlineQrcode color="#12163e" fontSize="1.2rem" />,
 		t: "QR Code",
 	},
 	{
-		i: <ImCross fontSize="0.9rem" />,
+		i: <ImCross color="#12163e" fontSize="0.9rem" />,
 		t: "Delete",
 	},
 ];
@@ -74,13 +76,12 @@ const CreateBtn = () => {
 			/>
 			<div>
 				<Button
-					className="btn rounded-pill mt-1"
+					className="btn rounded"
 					variant="contained"
 					aria-controls="simple-menu"
 					aria-haspopup="true"
 					onClick={handleClick}
 				>
-					<IoIosAddCircle className="h5 mb-0 me-1" />
 					Create link
 				</Button>
 				<Menu
@@ -115,7 +116,7 @@ const CreateBtn = () => {
 	);
 };
 
-const DownloadBtn = () => {
+const DownloadBtn = ({ toggleLink, setToggleLink }) => {
 	const [anchorEl, setAnchorEl] = useState(null);
 
 	const handleClick = (event) => {
@@ -124,18 +125,24 @@ const DownloadBtn = () => {
 
 	const handleClose = () => {
 		setAnchorEl(null);
+		setToggleLink(true);
 	};
 	return (
 		<>
 			<div>
 				<Button
-					className="outlinedBtn rounded-circle mt-1"
-					variant="outlined"
+					style={{
+						background: (toggleLink && "#424ede") || "",
+					}}
 					aria-controls="simple-menu"
 					aria-haspopup="true"
 					onClick={handleClick}
+					className="rounded-0"
 				>
-					<FiDownload fontSize="1.2rem" color="#424ede" />
+					<FiDownload
+						fontSize="1.2rem"
+						color={`${(toggleLink && "#fff") || "#424ede"}`}
+					/>
 				</Button>
 				<Menu
 					id="simple-menu"
@@ -156,17 +163,28 @@ const DownloadBtn = () => {
 	);
 };
 
-const FilterBtn = () => {
+const FilterBtn = ({ toggleLink, setToggleLink }) => {
 	const [filterBtn, setFilterBtn] = useState(false);
+
+	const handleFilter = () => {
+		setFilterBtn(!filterBtn);
+		setToggleLink(false);
+	};
 	return (
 		<>
 			<div className="position-relative">
-				<button
-					className="outlinedBtn2 rounded-circle mt-1 bg-transparent"
-					onClick={() => setFilterBtn(!filterBtn)}
+				<Button
+					style={{
+						background: (!toggleLink && "#424ede") || "",
+					}}
+					onClick={handleFilter}
+					className="rounded-0"
 				>
-					<FaFilter fontSize="0.9rem" color="#424ede" />
-				</button>
+					<FaFilter
+						fontSize="1.2rem"
+						color={`${(!toggleLink && "#fff") || "#424ede"}`}
+					/>
+				</Button>
 				{filterBtn && (
 					<div className="filteration position-absolute">
 						<h5 className="px-4 pt-2 pb-0 mb-0">
@@ -271,22 +289,34 @@ const LinksSec = () => {
 	const handleClose = () => {
 		setAnchorEl(null);
 	};
+	const [toggleLink, setToggleLink] = useState(false);
+
 	return (
 		<>
 			<div className="links_container mt-5">
 				<div className="page_container">
 					<div className="container-fluid">
 						<div className="d-flex flex-column flex-md-row justify-content-between align-md-items-center">
-							<h1 className="dark">Links</h1>
+							<h1 className="dark mb-0">
+								<span className="borderBottom">Lin</span>ks
+							</h1>
 							<div className="links_btn_container d-flex align-items-center">
 								<div>
 									<CreateBtn />
 								</div>
-								<div className="ms-3">
-									<DownloadBtn />
-								</div>
-								<div className="ms-3">
-									<FilterBtn />
+								<div className="inner_btn ms-3 d-flex">
+									<div>
+										<DownloadBtn
+											toggleLink={toggleLink}
+											setToggleLink={setToggleLink}
+										/>
+									</div>
+									<div>
+										<FilterBtn
+											toggleLink={toggleLink}
+											setToggleLink={setToggleLink}
+										/>
+									</div>
 								</div>
 								{/* <button className="btn ms-3">
 									<FaFilter />
@@ -294,10 +324,10 @@ const LinksSec = () => {
 							</div>
 						</div>
 
-						<div className="row">
-							{[1, 1].map((prev) => {
+						<div className="row mt-4">
+							{[1, 1, 1].map((prev) => {
 								return (
-									<div className="col-12 mt-4">
+									<div className="col-12">
 										<div className="linkRow ps-3 pe-1 ps-md-4 pe-md-3 py-3">
 											<div className="d-flex justify-content-between align-items-center">
 												<div className="d-flex align-items-center">
@@ -317,23 +347,61 @@ const LinksSec = () => {
 													</div>
 												</div>
 												<div className="d-flex align-items-center small">
-													<div className="graphNumber mt-1 d-none d-md-flex align-items-center">
-														<FaChartBar className="me-1" /> 2
-													</div>
-													<div className="d-none d-md-flex align-items-center ms-5 text-secondary">
-														<BiCalendar fontSize="0.95rem" />
-														<span className="small ms-1 mb-0">
-															13 July, 2021
-														</span>
+													<Tooltip
+														TransitionComponent={Zoom}
+														title="Total pageview"
+														placement="top"
+														arrow
+													>
+														<div className="graphNumber mt-1 d-none d-md-flex align-items-center">
+															<FaChartBar className="me-1" /> 2
+														</div>
+													</Tooltip>
+													<Tooltip
+														TransitionComponent={Zoom}
+														title="Launched on"
+														placement="top"
+														arrow
+													>
+														<div className="d-none d-md-flex align-items-center ms-5 text-secondary">
+															<BiCalendar fontSize="0.95rem" />
+															<span className="small ms-1 mb-0">
+																13 July, 2021
+															</span>
+														</div>
+													</Tooltip>
+													<div className="ms-3 ms-md-5">
+														<Tooltip
+															TransitionComponent={Zoom}
+															title="Change Status"
+															placement="top"
+															arrow
+														>
+															<label className="switch">
+																<input type="checkbox" defaultChecked />
+																<span className="slider round"></span>
+															</label>
+														</Tooltip>
 													</div>
 													<div className="ms-3 ms-md-5">
-														<label className="switch">
-															<input type="checkbox" defaultChecked />
-															<span className="slider round"></span>
-														</label>
-													</div>
-													<div className="ms-3 ms-md-5">
+														<div className="d-none d-md-flex">
+															{options.map((prev, ind) => {
+																return (
+																	<Tooltip
+																		TransitionComponent={Zoom}
+																		title={prev.t}
+																		placement="top"
+																		arrow
+																	>
+																		<div className="ms-2 pointer" key={ind}>
+																			{prev.i}
+																		</div>
+																	</Tooltip>
+																);
+															})}
+														</div>
 														<IconButton
+															className="d-block d-md-none"
 															aria-label="more"
 															aria-controls="long-menu"
 															aria-haspopup="true"
