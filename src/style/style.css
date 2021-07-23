@@ -411,6 +411,12 @@ input:focus {
   .chart_container .charts {
     padding: 6.2rem 0rem 0.8rem;
   }
+  .filteration {
+    right: -140%;
+  }
+  .header_container .nested_nav {
+    left: 0%;
+  }
 }
 
 @media screen and (max-width: 575px) {
@@ -419,6 +425,10 @@ input:focus {
   }
   .chart_container .charts {
     height: 340px;
+  }
+  .header_container .avatar {
+    height: 22px;
+    width: 22px;
   }
   .chart_container .charts .charts_btn {
     padding: 0rem 1.2rem 0rem 1.2rem;

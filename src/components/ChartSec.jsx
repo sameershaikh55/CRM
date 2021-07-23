@@ -222,19 +222,13 @@ const ChartSec = () => {
 										className={`${bigChartData === "data1" && "active_btn"}`}
 										onClick={() => setBgChartData("data1")}
 									>
-										Account
+										Pageviews
 									</button>
 									<button
 										className={`${bigChartData === "data2" && "active_btn"}`}
 										onClick={() => setBgChartData("data2")}
 									>
-										Purchases
-									</button>
-									<button
-										className={`${bigChartData === "data3" && "active_btn"}`}
-										onClick={() => setBgChartData("data3")}
-									>
-										Sessions
+										Visitors
 									</button>
 								</div>
 							</div>
