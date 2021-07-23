@@ -208,16 +208,16 @@ const ChartSec = () => {
 		<div className="chart_container mt-5">
 			<div className="page_container">
 				<div className="container-fluid">
-					<div className="charts bg-white px-3">
+					<div className="charts bg-white ps-3 pe-1 ps-sm-2 pe-sm-2 ps-md-3 pe-md-3">
 						<div className="charts_btn w-100">
-							<div className="d-flex justify-content-between align-items-center w-100">
+							<div className="d-flex flex-column flex-md-row justify-content-between align-md-items-center w-100">
 								<div>
 									<h2>
 										<span className="borderBottom">Perfo</span>
 										rmance
 									</h2>
 								</div>
-								<div className="btn_container">
+								<div className="btn_container mt-3 mt-md-0 align-self-center">
 									<button
 										className={`${bigChartData === "data1" && "active_btn"}`}
 										onClick={() => setBgChartData("data1")}

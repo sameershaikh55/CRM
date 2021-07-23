@@ -10,6 +10,7 @@ import { BsLink45Deg } from "react-icons/bs";
 import { FaProjectDiagram } from "react-icons/fa";
 import { GrPlan } from "react-icons/gr";
 import { BiCodeAlt, BiLogIn } from "react-icons/bi";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Header = () => {
 	const [nestedNav, setNestedNav] = useState(false);
@@ -19,9 +20,14 @@ const Header = () => {
 				<div className="container-fluid">
 					<div className="d-flex align-items-center justify-content-between">
 						<div className="logo_container">
-							<img src={logo} alt="logo" />
+							<NavLink to="/">
+								<img src={logo} alt="logo" />
+							</NavLink>
 						</div>
-						<div className="d-flex align-items-center">
+						<div className="d-block d-md-none">
+							<GiHamburgerMenu fontSize="1.5rem" />
+						</div>
+						<div className="d-none d-md-flex align-items-center">
 							<NavLink
 								to=""
 								className="text-decoration-none mainColor nav_link"

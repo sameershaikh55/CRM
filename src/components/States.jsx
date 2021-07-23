@@ -30,11 +30,14 @@ const States = () => {
 		<div className="states_container">
 			<div className="page_container">
 				<div className="container-fluid">
-					<div className="row gx-5">
+					<div className="row gx-3 gx-sm-3 gx-md-4 gx-lg-5">
 						{data.map((prev, i) => {
 							const { t, a, p } = prev;
 							return (
-								<div key={i} className="upper_card col-3 text-center">
+								<div
+									key={i}
+									className="upper_card mt-3 mt-sm-0 col-6 col-sm-3 text-center"
+								>
 									<div className="states_card bg-white py-4">
 										<p className="title mb-0 text-uppercase">{t}</p>
 										<h2 className="my-2">{a}</h2>
