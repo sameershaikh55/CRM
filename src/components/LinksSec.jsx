@@ -2,16 +2,19 @@ import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 
 import { FiDownload } from "react-icons/fi";
-import { FaFilter, FaHashtag, FaChartBar, FaEdit } from "react-icons/fa";
+import { HiExternalLink } from "react-icons/hi";
+import { FaFilter, FaChartBar, FaEdit } from "react-icons/fa";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
-import { BiCalendar } from "react-icons/bi";
+import { BiCalendar, BiOutline } from "react-icons/bi";
+import { FcGoogle } from "react-icons/fc";
 import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import { AiOutlineBarChart, AiOutlineQrcode } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
-import { GoPrimitiveDot } from "react-icons/go";
+import { AiFillPhone } from "react-icons/ai";
+import { CgShortcut } from "react-icons/cg";
 import BioLink from "./BioLink";
 import ShortUrl from "./ShortUrl";
 import Tooltip from "@material-ui/core/Tooltip";
@@ -92,22 +95,14 @@ const CreateBtn = () => {
 					onClose={handleClose}
 				>
 					<MenuItem onClick={handleClose} className="d-flex align-items-center">
-						<GoPrimitiveDot
-							fontSize="1.5rem"
-							color=" #222870"
-							className="me-1"
-						/>{" "}
+						<BiOutline fontSize="1.5rem" color=" #222870" className="me-1" />{" "}
 						Biolink page
 					</MenuItem>
 					<MenuItem
 						onClick={handleClose2}
 						className="d-flex align-items-center"
 					>
-						<GoPrimitiveDot
-							fontSize="1.5rem"
-							color=" #222870"
-							className="me-1"
-						/>{" "}
+						<CgShortcut fontSize="1.4rem" color=" #222870" className="me-1" />{" "}
 						Shortened URL
 					</MenuItem>
 				</Menu>
@@ -325,125 +320,249 @@ const LinksSec = () => {
 						</div>
 
 						<div className="row mt-4">
-							{[1, 1, 1].map((prev) => {
+							{[1, 1, 1].map((prev, i) => {
 								return (
-									<div className="col-12">
-										<div className="linkRow ps-3 pe-1 ps-md-4 pe-md-3 py-3">
-											<div className="d-flex justify-content-between align-items-center">
-												<div className="d-flex align-items-center">
-													<div className="hastageIcon rounded-circle me-3">
-														<FaHashtag color="#fff" />
-													</div>
-													<div>
-														<h6 className="mb-0">page-test</h6>
-														<div className="elipsesLink text-secondary small d-flex align-items-center mt-1">
-															<IoIosArrowDroprightCircle
-																color="#bbbbbb"
-																fontSize="1.2rem"
-																className="me-1"
-															/>{" "}
-															https://test.minilink.bio/page-test
+									<>
+										{(i === 0 && (
+											<div key={i} className="col-12">
+												<div className="linkRow ps-3 pe-1 ps-md-4 pe-md-3 py-3">
+													<div className="d-flex justify-content-between align-items-center">
+														<div className="d-flex align-items-center">
+															<div className="hastageIcon icon1 rounded-circle me-3">
+																<AiFillPhone fontSize="1.2rem" />
+															</div>
+															<div>
+																<h6 className="mb-0">page-test</h6>
+																<div className="elipsesLink text-secondary small d-flex align-items-center mt-1">
+																	<IoIosArrowDroprightCircle
+																		color="#bbbbbb"
+																		fontSize="1.2rem"
+																		className="me-1"
+																	/>{" "}
+																	https://test.minilink.bio/page-test
+																</div>
+															</div>
 														</div>
-													</div>
-												</div>
-												<div className="d-flex align-items-center small">
-													<Tooltip
-														TransitionComponent={Zoom}
-														title="Total pageview"
-														placement="top"
-														arrow
-													>
-														<div className="graphNumber mt-1 d-none d-md-flex align-items-center">
-															<FaChartBar className="me-1" /> 2
-														</div>
-													</Tooltip>
-													<Tooltip
-														TransitionComponent={Zoom}
-														title="Launched on"
-														placement="top"
-														arrow
-													>
-														<div className="d-none d-md-flex align-items-center ms-5 text-secondary">
-															<BiCalendar fontSize="0.95rem" />
-															<span className="small ms-1 mb-0">
-																13 July, 2021
-															</span>
-														</div>
-													</Tooltip>
-													<div className="ms-3 ms-md-5">
-														<Tooltip
-															TransitionComponent={Zoom}
-															title="Change Status"
-															placement="top"
-															arrow
-														>
-															<label className="switch">
-																<input type="checkbox" defaultChecked />
-																<span className="slider round"></span>
-															</label>
-														</Tooltip>
-													</div>
-													<div className="ms-3 ms-md-5">
-														<div className="d-none d-md-flex">
-															{options.map((prev, ind) => {
-																return (
-																	<Tooltip
-																		TransitionComponent={Zoom}
-																		title={prev.t}
-																		placement="top"
-																		arrow
-																	>
-																		<div className="ms-2 pointer" key={ind}>
-																			{prev.i}
-																		</div>
-																	</Tooltip>
-																);
-															})}
-														</div>
-														<IconButton
-															className="d-block d-md-none"
-															aria-label="more"
-															aria-controls="long-menu"
-															aria-haspopup="true"
-															onClick={handleClick}
-														>
-															<BiDotsVerticalRounded />
-														</IconButton>
-														<Menu
-															id="long-menu"
-															anchorEl={anchorEl}
-															keepMounted
-															open={open}
-															onClose={handleClose}
-															PaperProps={{
-																style: {
-																	maxHeight: ITEM_HEIGHT * 4.5,
-																	width: "20ch",
-																},
-															}}
-														>
-															{options.map((option, i) => (
-																<MenuItem
-																	key={option.t}
-																	selected={option === "Pyxis"}
-																	onClick={handleClose}
-																	className="d-flex align-items-center"
+														<div className="d-flex align-items-center small">
+															<Tooltip
+																TransitionComponent={Zoom}
+																title="Total pageview"
+																placement="top"
+																arrow
+															>
+																<div className="graphNumber mt-1 d-none d-md-flex align-items-center">
+																	<FaChartBar className="me-1" /> 2
+																</div>
+															</Tooltip>
+															<Tooltip
+																TransitionComponent={Zoom}
+																title="Launched on"
+																placement="top"
+																arrow
+															>
+																<div className="d-none d-md-flex align-items-center ms-5 text-secondary">
+																	<BiCalendar fontSize="0.95rem" />
+																	<span className="small ms-1 mb-0">
+																		13 July, 2021
+																	</span>
+																</div>
+															</Tooltip>
+															<div className="ms-3 ms-md-5">
+																<Tooltip
+																	TransitionComponent={Zoom}
+																	title="Change Status"
+																	placement="top"
+																	arrow
 																>
-																	<div>{option.i}</div>
-																	<div
-																		style={{ marginTop: "4px" }}
-																		className="ms-2"
-																	>
-																		{option.t}
-																	</div>
-																</MenuItem>
-															))}
-														</Menu>
+																	<label className="switch">
+																		<input type="checkbox" defaultChecked />
+																		<span className="slider round"></span>
+																	</label>
+																</Tooltip>
+															</div>
+															<div className="ms-3 ms-md-5">
+																<div className="d-none d-md-flex">
+																	{options.map((prev, ind) => {
+																		return (
+																			<Tooltip
+																				TransitionComponent={Zoom}
+																				title={prev.t}
+																				placement="top"
+																				arrow
+																			>
+																				<div className="ms-2 pointer" key={ind}>
+																					{prev.i}
+																				</div>
+																			</Tooltip>
+																		);
+																	})}
+																</div>
+																<IconButton
+																	className="d-block d-md-none"
+																	aria-label="more"
+																	aria-controls="long-menu"
+																	aria-haspopup="true"
+																	onClick={handleClick}
+																>
+																	<BiDotsVerticalRounded />
+																</IconButton>
+																<Menu
+																	id="long-menu"
+																	anchorEl={anchorEl}
+																	keepMounted
+																	open={open}
+																	onClose={handleClose}
+																	PaperProps={{
+																		style: {
+																			maxHeight: ITEM_HEIGHT * 4.5,
+																			width: "20ch",
+																		},
+																	}}
+																>
+																	{options.map((option, i) => (
+																		<MenuItem
+																			key={option.t}
+																			selected={option === "Pyxis"}
+																			onClick={handleClose}
+																			className="d-flex align-items-center"
+																		>
+																			<div>{option.i}</div>
+																			<div
+																				style={{ marginTop: "4px" }}
+																				className="ms-2"
+																			>
+																				{option.t}
+																			</div>
+																		</MenuItem>
+																	))}
+																</Menu>
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
-										</div>
-									</div>
+										)) || (
+											<div key={i} className="col-12">
+												<div className="linkRow ps-3 pe-1 ps-md-4 pe-md-3 py-3">
+													<div className="d-flex justify-content-between align-items-center">
+														<div className="d-flex align-items-center">
+															<div className="hastageIcon rounded-circle me-3">
+																<HiExternalLink fontSize="1.2rem" />
+															</div>
+															<div>
+																<h6 className="mb-0">Shorten-URL-test</h6>
+																<div className="elipsesLink text-secondary small d-flex align-items-center mt-1">
+																	<FcGoogle
+																		color="#bbbbbb"
+																		fontSize="1rem"
+																		className="me-1"
+																	/>{" "}
+																	<div style={{ marginTop: "1px" }}>
+																		http://google.com/
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div className="d-flex align-items-center small">
+															<Tooltip
+																TransitionComponent={Zoom}
+																title="Total pageview"
+																placement="top"
+																arrow
+															>
+																<div className="graphNumber mt-1 d-none d-md-flex align-items-center">
+																	<FaChartBar className="me-1" /> 2
+																</div>
+															</Tooltip>
+															<Tooltip
+																TransitionComponent={Zoom}
+																title="Launched on"
+																placement="top"
+																arrow
+															>
+																<div className="d-none d-md-flex align-items-center ms-5 text-secondary">
+																	<BiCalendar fontSize="0.95rem" />
+																	<span className="small ms-1 mb-0">
+																		13 July, 2021
+																	</span>
+																</div>
+															</Tooltip>
+															<div className="ms-3 ms-md-5">
+																<Tooltip
+																	TransitionComponent={Zoom}
+																	title="Change Status"
+																	placement="top"
+																	arrow
+																>
+																	<label className="switch">
+																		<input type="checkbox" defaultChecked />
+																		<span className="slider round"></span>
+																	</label>
+																</Tooltip>
+															</div>
+															<div className="ms-3 ms-md-5">
+																<div className="d-none d-md-flex">
+																	{options.map((prev, ind) => {
+																		return (
+																			<Tooltip
+																				TransitionComponent={Zoom}
+																				title={prev.t}
+																				placement="top"
+																				arrow
+																			>
+																				<div className="ms-2 pointer" key={ind}>
+																					{prev.i}
+																				</div>
+																			</Tooltip>
+																		);
+																	})}
+																</div>
+																<IconButton
+																	className="d-block d-md-none"
+																	aria-label="more"
+																	aria-controls="long-menu"
+																	aria-haspopup="true"
+																	onClick={handleClick}
+																>
+																	<BiDotsVerticalRounded />
+																</IconButton>
+																<Menu
+																	id="long-menu"
+																	anchorEl={anchorEl}
+																	keepMounted
+																	open={open}
+																	onClose={handleClose}
+																	PaperProps={{
+																		style: {
+																			maxHeight: ITEM_HEIGHT * 4.5,
+																			width: "20ch",
+																		},
+																	}}
+																>
+																	{options.map((option, i) => (
+																		<MenuItem
+																			key={option.t}
+																			selected={option === "Pyxis"}
+																			onClick={handleClose}
+																			className="d-flex align-items-center"
+																		>
+																			<div>{option.i}</div>
+																			<div
+																				style={{ marginTop: "4px" }}
+																				className="ms-2"
+																			>
+																				{option.t}
+																			</div>
+																		</MenuItem>
+																	))}
+																</Menu>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										)}
+									</>
 								);
 							})}
 						</div>

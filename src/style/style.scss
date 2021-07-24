@@ -132,8 +132,8 @@ input {
 		box-shadow: 1px 1px 10px rgba(34, 40, 112, 0.2);
 		width: 210px;
 		border-radius: 8px;
-		padding-left: 1.2rem;
-		padding-right: 1.2rem;
+		padding-left: 0.8rem;
+		padding-right: 0.8rem;
 		padding-top: 0.8rem;
 
 		ul {
@@ -141,8 +141,24 @@ input {
 				display: flex;
 				align-items: center;
 				font-weight: 500;
-				margin-bottom: 8px;
+				margin-bottom: 1px;
+				padding: 0.2rem 0.4rem 0.16rem 0.4rem;
 				color: #12163e;
+				transition: 0.4s;
+
+				&:last-child {
+					color: gray;
+
+					&:hover {
+						background: #bb1035;
+					}
+				}
+
+				&:hover {
+					background: #424ede;
+					color: #fff;
+					border-radius: 4px;
+				}
 			}
 		}
 	}
@@ -288,8 +304,15 @@ input {
 		}
 	}
 	.hastageIcon {
-		background-color: #424ede;
+		background-color: #6e76e5;
+		color: #fff;
+		box-shadow: 1px 1px 6px #6e76e59a;
 		padding: 0.22rem 0.5rem 0.45rem 0.52rem;
+	}
+	.hastageIcon.icon1 {
+		color: #fff;
+		background-color: #424ede;
+		padding: 0.25rem 0.5rem 0.35rem 0.52rem;
 	}
 	.linkRow {
 		background-color: #fff;
@@ -454,10 +477,23 @@ input {
 		padding: 6.2rem 0rem 0.8rem;
 	}
 	.filteration {
-		right: -140%;
+		right: -280%;
 	}
 	.header_container .nested_nav {
-		left: 0%;
+		right: 0%;
+		left: auto;
+	}
+	.header_container .nav_link {
+		font-size: 1.1rem;
+	}
+	.header_container .nested_nav {
+		width: 172px;
+	}
+	.links_container .hastageIcon {
+		padding: 0.4rem;
+	}
+	.links_container .hastageIcon.icon1 {
+		padding: 0.4rem;
 	}
 }
 @media screen and (max-width: 575px) {
