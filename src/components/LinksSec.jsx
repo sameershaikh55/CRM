@@ -17,6 +17,8 @@ import BioLink from "./BioLink";
 import ShortUrl from "./ShortUrl";
 import Tooltip from "@material-ui/core/Tooltip";
 import Zoom from "@material-ui/core/Zoom";
+import link from "../assets/link.svg";
+import smartphone from "../assets/smartphone.svg";
 
 const options = [
 	{
@@ -354,7 +356,7 @@ const LinksSec = () => {
 																	fill="#fff"
 																	height="25px"
 																	viewBox="0 0 128 128"
-																	width="25px"
+																	width="28px"
 																	xmlns="http://www.w3.org/2000/svg"
 																>
 																	<g>
