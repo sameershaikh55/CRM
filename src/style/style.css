@@ -294,17 +294,17 @@ input:focus {
 }
 
 .links_container .hastageIcon {
-  background-color: #6e76e5;
+  background-color: #222870;
   color: #fff;
   -webkit-box-shadow: 1px 1px 6px #6e76e59a;
           box-shadow: 1px 1px 6px #6e76e59a;
-  padding: 0.22rem 0.5rem 0.45rem 0.52rem;
+  padding: 0.26rem 0.48rem 0.36rem 0.52rem;
 }
 
 .links_container .hastageIcon.icon1 {
   color: #fff;
   background-color: #424ede;
-  padding: 0.25rem 0.5rem 0.35rem 0.52rem;
+  padding: 0.25rem 0.4rem 0.35rem 0.4rem;
 }
 
 .links_container .linkRow {
