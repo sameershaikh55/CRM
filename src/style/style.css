@@ -10,6 +10,7 @@
 html {
   width: 100%;
   font-size: 100%;
+  overflow-x: hidden;
 }
 
 @media screen and (max-width: 992px) {
@@ -60,6 +61,7 @@ html {
 
 body {
   background: #6e76e514 !important;
+  overflow-x: hidden;
 }
 
 .borderBottom {
@@ -90,12 +92,81 @@ input:focus {
   padding: 5.5px 10px !important;
 }
 
+.wholePage .firstD {
+  display: none;
+  width: 300px;
+}
+
+.wholePage .secondD {
+  width: 100%;
+}
+
+.wholePage .animation_class {
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  z-index: 1;
+}
+
+.wholePage .sidebar_container {
+  margin-top: 7rem;
+  background-color: #fff;
+  position: fixed;
+  left: 0%;
+  height: 98.4%;
+  width: 100%;
+}
+
+.wholePage .sidebar_container ul {
+  position: fixed;
+  width: 200px;
+}
+
+.wholePage .sidebar_container ul li {
+  margin-bottom: 0.5rem;
+  width: 200px;
+}
+
+.wholePage .sidebar_container ul li a div {
+  font-size: 1.2rem;
+  padding: 0.4rem 0rem;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  width: 200px;
+  color: #000;
+}
+
+.wholePage .sidebar_container ul li a div:hover {
+  background: #424ede;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.wholePage .sidebar_container ul li .active_nav div {
+  background: #424ede;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.wholePage .sidebar_container ul li.logout a div:hover {
+  background: #c4183c !important;
+  color: #fff;
+  border-radius: 4px;
+}
+
 .header_container {
   position: fixed;
   width: 100%;
-  padding: 1rem 0rem;
+  height: 80px;
   border-bottom: 3px solid #6e76e5;
-  z-index: 1;
+  z-index: 2;
+}
+
+.header_container .logo_container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .header_container .logo_container img {
@@ -460,6 +531,258 @@ input:focus {
   height: auto;
 }
 
+.report_table_container {
+  margin-top: 7rem;
+  /* Rounded sliders */
+  /* Rounded sliders */
+}
+
+.report_table_container .switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 21px;
+  margin-top: 6px;
+}
+
+.report_table_container .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.report_table_container .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.report_table_container .slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.report_table_container input:checked + .slider {
+  background-color: #424ede;
+}
+
+.report_table_container input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #424ede;
+          box-shadow: 0 0 1px #424ede;
+}
+
+.report_table_container input:checked + .slider:before {
+  -webkit-transform: translateX(15px);
+          transform: translateX(15px);
+}
+
+.report_table_container .slider.round {
+  border-radius: 2px;
+}
+
+.report_table_container .slider.round:before {
+  border-radius: 2px;
+}
+
+.report_table_container .tableStart {
+  background-color: #fff;
+}
+
+.report_table_container thead tr th {
+  background-color: #424ede;
+}
+
+.report_table_container thead tr th:first-child {
+  border-top-left-radius: 15px;
+}
+
+.report_table_container thead tr th:last-child {
+  border-top-right-radius: 15px;
+}
+
+table {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 1px 10px #dfdfdf;
+          box-shadow: 1px 1px 10px #dfdfdf;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #424fde13;
+}
+
+.table100 {
+  min-width: 100%;
+  overflow-x: auto;
+}
+
+.table100.ver1 th {
+  font-size: 12px;
+  color: #fff;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.row100.head th {
+  padding-top: 24px;
+  padding-bottom: 20px;
+}
+
+.column100.column1 {
+  width: 100px;
+  padding-left: 42px;
+}
+
+.column100 {
+  width: 130px;
+  padding-left: 25px;
+}
+
+th,
+td {
+  font-weight: unset;
+  padding-right: 10px;
+}
+
+th {
+  text-align: left;
+}
+
+.table100.ver1 td {
+  font-size: 14px;
+  color: gray;
+  line-height: 1.4;
+}
+
+.row100 td {
+  padding-top: 18px;
+  padding-bottom: 14px;
+}
+
+.calender_container {
+  height: 100vh;
+}
+
+.calender_container .react-calendar {
+  width: 530px;
+  max-width: 100%;
+  background: white;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 2.5em;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 1px 20px #1322c721;
+          box-shadow: 1px 1px 20px #1322c721;
+}
+
+.calender_container .react-calendar__tile--active:enabled,
+.calender_container .react-calendar__tile--active:enabled {
+  background-color: #424ede;
+  color: #fff;
+  border-radius: 10px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.calender_container .react-calendar__tile--active:enabled:hover,
+.calender_container .react-calendar__tile--active:enabled:focus {
+  color: #fff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-color: #424ede;
+}
+
+.calender_container .react-calendar__tile--now {
+  background-color: #2636e9b9;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.calender_container .react-calendar__tile:enabled:hover {
+  background-color: #424ede;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.calender_container .react-calendar__navigation {
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  background-color: #424ede;
+}
+
+.calender_container .react-calendar__month-view__weekdays__weekday {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 0.8rem;
+}
+
+.calender_container button.react-calendar__navigation__label {
+  color: #fff;
+}
+
+.calender_container .react-calendar__navigation {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  margin-bottom: 0rem;
+}
+
+.calender_container .react-calendar__navigation button,
+.calender_container .react-calendar__month-view__weekdays {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.calender_container .react-calendar__navigation button:enabled:hover,
+.calender_container .react-calendar__navigation button:enabled:focus {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-color: #424ede;
+}
+
+.calender_container .react-calendar__navigation__prev2-button {
+  border-top-left-radius: 10px !important;
+  background-color: #424ede;
+  color: #fff;
+}
+
+.calender_container .react-calendar__navigation__next2-button {
+  border-top-right-radius: 10px !important;
+  background-color: #424ede;
+  color: #fff;
+}
+
+.calender_container .react-calendar__navigation__arrow,
+.calender_container .react-calendar__navigation__prev-button {
+  color: #fff;
+}
+
+@media screen and (min-width: 1250px) {
+  .wholePage .firstD {
+    display: block;
+  }
+  .header_container .burger_container {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 1000px) {
   .MuiDialog-paperWidthSm {
     width: 500px;
@@ -488,6 +811,9 @@ input:focus {
   }
   .header_container .nested_nav {
     width: 172px;
+  }
+  .calender_container .react-calendar {
+    width: auto;
   }
 }
 

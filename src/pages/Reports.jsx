@@ -7,8 +7,9 @@ import ChartSec from "../components/ChartSec";
 import LinksSec from "../components/LinksSec";
 import Footer from "../components/Footer";
 import SideBar from "../components/SideBar";
+import ReportTable from "../components/ReportTable";
 
-const Dashboard = () => {
+const Reports = () => {
 	const [sideBar, setSideBar] = useState(false);
 
 	return (
@@ -28,9 +29,7 @@ const Dashboard = () => {
 						<SideBar />
 					</div>
 					<div className="secondD">
-						<States />
-						<ChartSec />
-						<LinksSec />
+						<ReportTable />
 					</div>
 				</div>
 			</div>
@@ -39,4 +38,4 @@ const Dashboard = () => {
 	);
 };
 
-export default Dashboard;
+export default Reports;

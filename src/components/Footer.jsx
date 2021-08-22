@@ -24,7 +24,7 @@ const Footer = () => {
 							<a
 								className="text-decoration-none text-dark"
 								href="https://google.com"
-								target="_blank"
+								target="blank"
 							>
 								Google
 							</a>
@@ -32,9 +32,9 @@ const Footer = () => {
 							<a
 								className="text-decoration-none text-dark"
 								href="https://minilink.bio/"
-								target="_blank"
+								target="blank"
 							>
-								Contacto
+								Contact
 							</a>
 							<br />
 						</div>

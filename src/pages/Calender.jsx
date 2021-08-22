@@ -2,13 +2,11 @@ import React, { useState } from "react";
 
 // IMPORTS
 import Header from "../components/Header";
-import States from "../components/States";
-import ChartSec from "../components/ChartSec";
-import LinksSec from "../components/LinksSec";
 import Footer from "../components/Footer";
 import SideBar from "../components/SideBar";
+import CalenderBody from "../components/CalenderBody";
 
-const Dashboard = () => {
+const Calender = () => {
 	const [sideBar, setSideBar] = useState(false);
 
 	return (
@@ -28,9 +26,7 @@ const Dashboard = () => {
 						<SideBar />
 					</div>
 					<div className="secondD">
-						<States />
-						<ChartSec />
-						<LinksSec />
+						<CalenderBody />
 					</div>
 				</div>
 			</div>
@@ -39,4 +35,4 @@ const Dashboard = () => {
 	);
 };
 
-export default Dashboard;
+export default Calender;

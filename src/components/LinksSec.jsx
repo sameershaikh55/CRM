@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 
 import { FiDownload } from "react-icons/fi";
-import { HiExternalLink } from "react-icons/hi";
 import { FaFilter, FaChartBar, FaEdit } from "react-icons/fa";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { BiCalendar } from "react-icons/bi";
@@ -17,8 +16,6 @@ import BioLink from "./BioLink";
 import ShortUrl from "./ShortUrl";
 import Tooltip from "@material-ui/core/Tooltip";
 import Zoom from "@material-ui/core/Zoom";
-import link from "../assets/link.svg";
-import smartphone from "../assets/smartphone.svg";
 
 const options = [
 	{
